@@ -32,6 +32,7 @@ def convert_encoding(input_file, output_file):
                     pbar.update(len(line.encode(encoding)))
                 except UnicodeEncodeError as e:
                     print(f"编码错误：{e}")
+                    print(line)
                     continue     
     print(f"转换完成!\n用时：{time.time() - start_time}秒")
 
