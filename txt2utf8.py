@@ -17,6 +17,8 @@ def convert_encoding(input_file, output_file):
         detector.feed(data)
         detector.close()
     encoding = detector.result["encoding"]
+    if encoding == "GB2312":
+        encoding = "GB18030"
     confidence = detector.result["confidence"]
     print(f"输入文件的编码为：{encoding}，置信度为：{confidence}")
 
